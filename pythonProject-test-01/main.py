@@ -26,12 +26,12 @@ float (real/flutuante) - números reais. Casas decimais separadas por ponto
 bool (booleano) - True ou False  Ex.: 10 == 10
 """
 
-print(type('palavra'))  #str
-print(type(10))  #int
-print(type(10.10))  #float
-print(type(10 >= 10), '\n')  #bool
+print(type('palavra'))  # str
+print(type(10))  # int
+print(type(10.10))  # float
+print(type(10 >= 10), '\n')  # bool
 
-# Ex,: alterando uma string para inteiro
+# Ex.: alterando uma string para inteiro
 print('300', type('300'))
 print(int('300'), type(int('300')), '\n')
 
@@ -54,8 +54,8 @@ print(30*10)
 print(30/10)
 print(30//11)
 print(2**4)
-print(30%11, '\n')
-print('Multiplcação usada para repetição de uma string:\n', 5 * ('String repetida 5x\n'))
+print(30 % 11, '\n')
+print('Multiplcação usada para repetição de uma string:\n', 5 * 'String repetida 5x\n')
 
 """
 Variáveis:
@@ -67,14 +67,15 @@ idade = 40
 altura = 1.77
 maioridade = idade >= 18
 peso = 80
-imc = peso / (altura **2)
+imc = peso / (altura ** 2)
 
 print('O nome é', nome + ', possui', idade, 'anos, e tem', altura, 'm de altura. Ele é maior de idade?', maioridade)
 print('Seu imc é de', imc, '\n\n')
 # melhor forma de exibição, utilizando F-Strong
 print(f'Seu nome é {nome}, possui {idade} anos, pesa {peso}kg e tem {altura}m de altura.\nSeu IMC é de {imc:.2f}')
 # Outra forma de concatenar as variáveis com o texto do print, utilizando F-String
-print('Seu nome é {0}, possui {1} anos e pesa {2}kg e seu IMC é de {3:.2f} - {0} {1} {2} {3}\n\n'.format(nome, idade, peso, imc))
+print('Seu nome é {0}, possui {1} anos e pesa {2}kg e seu IMC é de {3:.2f}'
+      ' - {0} {1} {2} {3}\n\n'.format(nome, idade, peso, imc))
 
 # Fazer input
 
@@ -111,4 +112,36 @@ Verificar quantos caracteres há dentro de uma string
 """
 
 qtd_caracteres = len(nome)
-print(qtd_caracteres)
+print('O nome tem {} caracteres\n'.format(qtd_caracteres))
+
+"""
+Formatando valores com modificadores
+:s - Texto (strings)
+:d - Inteiros (int)
+:f - Float
+:.(Valor)f - Quantidade de casas decimas no float
+:(caractere)(posição)(quantidade)(tipo) - preencher x casas com "caractere":
+
+exemplo, um numero inteiro que deve ter 10 digitos. todos os digitos a esquerda devem ser completados com 0
+
+Obs - Posições:
+> - adiciona à esquerda
+< - adiciona à direita
+^ - adiciona no centro
+
+Ex.:
+"""
+print('Número inteiro precisa ter no minimo 10 digitos, adicionando zeros à esquerda')
+print(f'{num:0>10}\n')
+
+print('Colocando # no entorno do nome para que a string tenha 50 caracteres')
+nome_formatado = '{:#^50}'.format(nome)
+print('{}\n'.format(nome_formatado))
+
+maiusculo = 'tudo em maiusculo'
+minusculo = 'TUDO EM MINUSCULO'
+title = "primeiras letras maiusculas"
+
+print(maiusculo.upper())
+print(minusculo.lower())
+print(title.title())
