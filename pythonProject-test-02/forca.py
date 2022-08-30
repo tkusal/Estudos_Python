@@ -5,7 +5,9 @@ chances = 5
 palavraSecreta = palavraSecreta.lower()
 
 print('Bem vindo ao Jogo da forca.')
-print('Você pode errar apenas 5 vezes')
+print('Você pode errar apenas 5 vezes. Boa sorte!\n')
+
+print(f'É uma palavra de {len(palavraSecreta)} letras\n')
 
 while True:
     if chances == 0:
